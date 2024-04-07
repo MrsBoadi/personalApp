@@ -8,7 +8,7 @@ const sessionsRouter = express.Router();
 
 sessionsRouter.route('/').get((req, res) => {
   const url =
-    'mongodb+srv://dbUser:1R7jzwoc2WuKOK4U@globomantics.o6s8j.mongodb.net?retryWrites=true&w=majority';
+    'mongodb+srv://MrsBoadi:143Yokwe$@cluster0.ebt6hwu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
   const dbName = 'globomantics';
 
   (async function mongo() {
@@ -20,8 +20,8 @@ sessionsRouter.route('/').get((req, res) => {
       const db = client.db(dbName);
 
       const sessions = await db.collection('sessions').find().toArray();
-
-      res.render('sessions', { sessions });
+      
+     res.render('sessions', {sessions});
     } catch (error) {
       debug(error.stack);
     }
@@ -32,8 +32,8 @@ sessionsRouter.route('/').get((req, res) => {
 sessionsRouter.route('/:id').get((req, res) => {
   const id = req.params.id;
   const url =
-    'mongodb+srv://dbUser:1R7jzwoc2WuKOK4U@globomantics.o6s8j.mongodb.net?retryWrites=true&w=majority';
-  const dbName = 'glonomantics';
+    'mongodb+srv://MrsBoadi:143Yokwe$@globomantics.o6s8j.mongodb.net?retryWrites=true&w=majority&appName=Cluster0';
+  const dbName = 'globomantics';
 
   (async function mongo() {
     let client;

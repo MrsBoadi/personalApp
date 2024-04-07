@@ -20,7 +20,7 @@ adminRouter.route('/').get((req, res) => {
       const db = client.db(dbName);
 
       const response = await db.collection('sessions').insertMany(sessions);
-      res.json(response);
+      res.json (response);
     } catch (error) {
       debug(error.stack);
     }
